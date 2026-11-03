@@ -1,29 +1,23 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Dashboard</title>
-
+    <title>Dashboard</title>
     <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+    href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-    <div class="container">
-        <h2>Welcome, {{ name }}! 💗</h2>
+<div class="form-container">
+    <h2>💜 Welcome to Dashboard 💜</h2>
 
-        <p class="subtitle">
-            Registration successful!
-        </p>
+    <p>Hello, {{ name }}!</p>
+    <p>You have successfully logged in.</p>
 
-        <h3>My Dashboard</h3>
-
-        <p>You have successfully created your account.</p>
-        <p>Welcome to our website.</p>
-
-        <a class="dashboard-button" href="{{ url_for('logout') }}">
-            Logout
-        </a>
-    </div>
+    <button onclick="location.href='/login'">
+        Logout
+    </button>
+</div>
 
 </body>
 </html>

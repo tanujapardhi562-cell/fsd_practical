@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template,flash,request
 import psycopg2
 
@@ -7,14 +6,18 @@ app.secret_key = "my_secret_key"
 
 def db_connect():
     conn = psycopg2.connect(
-        dbname="fsd_project",
-        user="postgres",
+        dbname="fsd",
+        user="postgres",j
         password="Tanuja@1106",
         host="localhost",
         port="5432"
     )
     return conn
 
+
+@app.route('/')
+def home():
+    return render_template("registration.html")
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -25,6 +28,7 @@ def register():
 
         if not name or not email or not password:
             flash("Please fill all fields.")
+            return render_template("registration.html")
 
         conn = db_connect()
         cur = conn.cursor()
@@ -33,7 +37,7 @@ def register():
             """create table if not exists users( 
                         Name VARCHAR(100),
                         email VARCHAR(100),
-                        password varchar(100));
+                        password varchar(100))
                 """)
         
 
@@ -49,22 +53,19 @@ def register():
         return render_template("dashboard.html", name=name)
     return render_template("registration.html")       
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET','POST'])
 def login():
     if request.method == "POST":
         return render_template("dashboard.html")
 
     return render_template("login.html")
+    
 
-    return render_template("login.html")
 @app.route("/dashboard")
 def dashboard():
     
+    return render_template("dashboard.html")
 
-    return render_template(
-        "dashboard.html",
-        
-    )
 @app.route("/logout")
 def logout():
     return render_template("login.html")

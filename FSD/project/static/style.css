@@ -1,41 +1,35 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #FCE4EC;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+    background-color: #EDE7F6;
+    font-family: Arial;
 }
+
+.form-container {
+    background-color: white;
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
 h2 {
+    color: purple;
     text-align: center;
-    color: #C2185B;
-    margin-bottom: 10px;
 }
-label{
-    color:#C2185B;
-}
+
 input {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 12px;
-    margin-bottom: 18px;
-    border: 1px solid #F3B6CB;
-    border-radius: 7px;
-    outline: none;
+    width: 25%;
+    padding: 8px;
+    margin: 8px 0;
 }
 
 button {
-    width: 100%;
-    padding: 12px;
-    background-color: #E91E63;
+    background-color: purple;
     color: white;
+    padding: 10px;
     border: none;
-    border-radius: 7px;
-    font-size: 16px;
-    cursor: pointer;
-}
-a {
-    color: #D81B60;
-    text-decoration: none;
+    width: 100%;
 }
 
+button:hover {
+    background-color: rgb(177, 99, 232);
+}
